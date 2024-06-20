@@ -1,6 +1,7 @@
 var Engine = Matter.Engine,
     Render = Matter.Render,
     Runner = Matter.Runner,
+    Bodies = Matter.Bodies,
     World = Matter.World;
 
     //엔진 선언
@@ -17,6 +18,30 @@ var Engine = Matter.Engine,
             height: 850,
         }
     })
+
+    const world = engine.world;
+    const leftWall = Bodies.rectangle(15,395,30,790, {
+        isStatic : true ,
+        render : {fillStyle: '#E6B143'}
+    })
+
+    const rightWall = Bodies.rectangle(605,395,30,790, {
+        isStatic : true, // 고정해주는 기능
+        render : { fillStyle: '#E6B143'} // 색상지정
+    })
+
+    const ground = Bodies.rectangle(310,820,620,60,{
+        isStatic : true, // 고정해주는 기능
+        render : { fillStyle: '#E6B143'} // 색상지정
+    })
+    const topLine = Bodies.rectangle(310,150,620,2,{
+        isStatic : true, // 고정해주는 기능
+        render : { fillStyle: '#E6B143'} // 색상지정
+    })
+
+    World.add(world,[leftWall,rightWall,ground,topLine]);
+
+
 
     Render.run(render);
     Runner.run(engine);
