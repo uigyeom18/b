@@ -46,3 +46,4 @@ const FRUITS= [
     },
   ];
   export { FRUITS };
+  

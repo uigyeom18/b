@@ -109,3 +109,4 @@ var Engine = Matter.Engine,
         }
     }
     addFruit();
+    
